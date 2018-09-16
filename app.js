@@ -14,8 +14,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 // use embedded javascript for views
 app.set('view engine', 'ejs');
 
-// use public directory for statics 
+// use public directory for statics
 app.use(express.static(path.join(__dirname,"public")));
+
+app.use(express.static(__dirname));
+
 
 
 // Initialize Firebase

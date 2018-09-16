@@ -23,7 +23,6 @@ var naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
   url: process.env.WATSON_SENTIMENT_URL
 });
 
-
 module.exports = function(app){
 
   // required by body-parser
@@ -151,5 +150,18 @@ module.exports = function(app){
   });
   /*******************************/
 
+  
 
+  /*********** Chatbot ***********/
+  app.get('/chatbot', function(req, res){
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        res.render("chatbot.ejs")
+      } else {
+        res.redirect('/login');
+      }
+    })
+  });
+  /******************************/
 }
