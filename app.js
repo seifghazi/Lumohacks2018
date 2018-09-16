@@ -1,15 +1,10 @@
-const express  		    = require('express');
-const app      		        	= express();
-const port    	       	    = process.env.PORT || 8080;
-const morgan            		= require('morgan');
-const bodyParser       		= require('body-parser');
+const express  	  = require('express');
+const app       	= express();
+const port        = process.env.PORT || 8080;
+const morgan    	= require('morgan');
+const bodyParser	= require('body-parser');
 
-
-app.get('/', function(req, res) {
-  res.send('Home page');
-});
-
-
+const routes      = require('./routes/index.js')(app);
 
 /*RunServer*/
 app.listen(port);
