@@ -62,15 +62,15 @@ module.exports = function(app){
 
 
   /*********** Dashboard *********/
-  app.get('/dashboard', function(req, res){
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
+   app.get('/dashboard', function(req, res){
+  //   firebase.auth().onAuthStateChanged(function(user) {
+  //     if (user) {
         // User is signed in.
-        res.render("dashboard.ejs");
-      } else {
-        res.redirect('/login');
-      }
-    });
+         res.render("dashboard.ejs");
+    //   } else {
+    //     res.redirect('/login');
+    //   }
+    // });
   });
   /*******************************/
 
