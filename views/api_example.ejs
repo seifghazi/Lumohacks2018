@@ -46,14 +46,9 @@
 					setTimeout(ready, Math.random()*500+100);
 		        } else {
 		            convState.current.next = convState.newState({
-		                type: 'select',
+		                type: 'input',
 		                name: 'dynamic-question-'+count,
-		                questions: ['This question state was built on your previous answer (you answered: '+convState.current.answer.text+')'],
-		                answers: [
-		                    {text: 'Answer 1', value: '1'},
-		                    {text: 'Answer 2', value: '2'},
-		                    {text: 'END', value: 'end'}
-		                ]
+		                questions: ['This question state was built on your previous answer (you answered: '+convState.current.answer.text+')']
 		            });
 					//emulating random response time (100-600ms)
 					setTimeout(ready, Math.random()*500+100);
