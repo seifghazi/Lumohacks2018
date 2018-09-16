@@ -129,7 +129,6 @@ module.exports = function(app){
         if (err) {
           console.log('error:', err);
         } else {
-          console.log('AHHHHHH');
           console.log(nlpResponse);
           points = input.previousPoints;
           points.push([input.messageIndex, Number(nlpResponse.sentiment.document.score)])
