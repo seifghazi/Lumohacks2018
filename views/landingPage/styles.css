@@ -1,0 +1,41 @@
+#home {
+    margin: 0;
+}
+
+.navbar {
+    color: white;
+    background-color:#fecfd9;
+    height: 80px;
+}
+
+#navbarText {
+    color: white;
+}
+
+#logo {
+    font-family: 'Segoe UI';
+    font-size: 24pt;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#signUpButton {
+    background-color: #febfe8;
+    font-size: 16pt;
+    margin-top: 20px; 
+    margin-right: 20px;
+    border-radius: 20%;
+    padding: 5px;
+    float: right;
+}
+
+#signUpButton {
+    background-color: #febfe8;
+    font-size: 16pt;
+    margin-top: 20px; 
+    margin-right: 20px;
+    border-radius: 20%;
+    padding: 5px;
+    float: right;
+}
