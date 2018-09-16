@@ -2,7 +2,6 @@ var firebase = require('firebase');
 var path = require('path');
 var bodyParser = require('body-parser');
 
-
 module.exports = function(app){
 
   // required by body-parser
@@ -16,7 +15,9 @@ module.exports = function(app){
 
     /*********** Login Page *********/
     app.get('/login', function(req, res) {
-      res.sendFile(path.join(__dirname + '/../public/login.html'));
+      // res.sendFile(path.join(__dirname + '/../views/login.html'));
+      res.sendFile(path.join(__dirname + '/../views/index.html'));
+
     });
 
     app.post('/login', function(req, res){
@@ -62,15 +63,15 @@ module.exports = function(app){
     /*******************************/
 
     /*********** Chatbot ***********/
-    app.get('/resources', function(req, res){
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          res.render("chatbot.ejs")
-        } else {
-          res.redirect('/login')
-        }
-      });
+    app.get('/chatbot', function(req, res){
+      // firebase.auth().onAuthStateChanged(function(user) {
+      //   if (user) {
+      //     // User is signed in.
+          res.render("index.ejs")
+      //   } else {
+      //     res.redirect('/login')
+      //   }
+      // });
     });
     /*******************************/
 
