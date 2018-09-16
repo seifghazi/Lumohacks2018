@@ -2,18 +2,40 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/../public/assets/css/login.css">
 <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 </head>
 <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  	<div class="container">
+  		<div class="navbar-header">
+  			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 
-  <div class="container">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        		</button>
+  			<a href="#" class="navbar-brand"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> iGallery</a>
+  		</div>
+  	 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  		<div class="nav navbar-nav">
+  			<li><a href="/">Home</a></li>
+  			<li><a href="/resources">Resources</a></li>
+  		</div>
+  	</div>
+  	</div>
+  	</nav>
+  <div class="container main-div" >
     <form action="/login" method="POST">
-    <input id="email" type="email" name="email" placeholder="Email">
-    <input id="password" type= "password" name="pass" placeholder="Password">
+    <div class="form-group">
+      <input id="email" class="form-control" type="email" name="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+    <input id="password" class="form-control" type="password" name="pass" placeholder="Password">
+    <div>
     <button  class="btn btn-danger">Log in</button>
     </form>
   </div>
-<!--
-<script type="text/javascript" src="authentication.js"></script> -->
 </body>
 </html>
