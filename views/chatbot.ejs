@@ -97,7 +97,7 @@
 		<script>
 		jQuery(function($){
 			var count = 0;
-			var points = [];
+			var points = new Array();
 			var convForm = $('#chat').convform({eventList:{onInputSubmit: function(convState, ready) {
 				//here you send the response to your API, get the results and build the next question
 				//when ready, call 'ready' callback (passed as the second parameter)
@@ -112,6 +112,7 @@
 							name: 'dynamic-question-'+count,
 							questions: [o.textOutput]
 						});
+						points = o.points;
 						//emulating random response time (100-600ms)
 						setTimeout(ready, Math.random()*500+100);
 					});
@@ -131,7 +132,8 @@
 
 			$.ajax({
 				type: "POST",
-				url: "https://lumohackswatson.herokuapp.com/chatbot",
+				// url: "https://lumohackswatson.herokuapp.com/chatbot",
+				url: "http://localhost:8080/chatbot",
 				data: JSON.stringify(inputData),
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
