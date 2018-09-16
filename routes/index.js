@@ -2,25 +2,25 @@ module.exports = function(app){
 
     /*********** Home Page *********/
     app.get('/', function(req, res){
-        res.send('Home page');
+        res.render('home.ejs');
     });
     /*******************************/
 
     /*********** Dashboard *********/
     app.get('/dashboard', function(req, res){
-        res.send('Dashboard Page');
+        res.render('dashboard.ejs');
     });
     /*******************************/
 
     /*********** Resources *********/
     app.get('/resources', function(req, res){
-        res.send('Resources Page');
+        res.render('resources.ejs');
     });
     /*******************************/
 
     /*********** Chatbot ***********/
     app.get('/resources', function(req, res){
-        res.send('Chatbot Page');
+        res.render('chatbot.ejs');
     });
     /*******************************/
 

@@ -6,6 +6,12 @@ const bodyParser	= require('body-parser');
 
 const routes      = require('./routes/index.js')(app);
 
-/*RunServer*/
+// use embedded javascript for views
+app.set('view engine', 'ejs');
+
+// use public directory for statics
+app.use(express.static('public'));
+
+// Run server
 app.listen(port);
 console.log('The magic happens on port ' + port);
