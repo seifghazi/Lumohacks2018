@@ -108,31 +108,31 @@ module.exports = function(app){
 
   /******** Chatbot POST *********/
   app.post('/chatbot', function(req, res){
-    var input = req.body.input;
+    var input = req.body;
     console.log(req.body);
 
     watsonAssistant.message({
       workspace_id: '2eca6c93-2b1e-45a0-b17e-2c759ee816a2',
-      input: {'text': input.text}
-    }, function(err, res) {
-      if (err)
+      input: {'text': input.text.replace(/\n/, '')}
+    }, function(err, watsonResponse) {
+      if (err) {
       console.error('error:', err);
-      else
-      console.log(res.output.text);
-
+      } else {
       var parameters = {
-        'text': input.text,
+        'text': String(watsonResponse.output.text).replace(/\n/, ''),
         'features': {
           'sentiment': {}
         }
       };
 
-      naturalLanguageUnderstanding.analyze(parameters, function(res, err) {
+      naturalLanguageUnderstanding.analyze(parameters, function(err, nlpResponse) {
         if (err) {
           console.log('error:', err);
         } else {
+          console.log('AHHHHHH');
+          console.log(nlpResponse);
           points = input.previousPoints;
-          points.push([input.messageIndex, Number(res.sentiment.document.score)])
+          points.push([input.messageIndex, Number(nlpResponse.sentiment.document.score)])
           gradient = regression.linear(points).equation[0];
 
           var output = {
@@ -141,11 +141,12 @@ module.exports = function(app){
             points: points,
             bestFitGradient: gradient
           };
+          console.log("#########OUTPUT########");
           console.log(output);
-
-          res.json(output);
+          res.send(output);
         }
       });
+    }
     });
   });
   /*******************************/
