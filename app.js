@@ -37,3 +37,5 @@ firebase.initializeApp(config);
 // Run server
 app.listen(port);
 console.log('The magic happens on port ' + port);
+
+app.listen(process.env.PORT || port)
