@@ -41,7 +41,7 @@ module.exports = function(app){
 
   /*********** Login Page *********/
   app.get('/login', function(req, res) {
-    res.sendFile(path.join(__dirname + '/../public/login.html'));
+    res.sendFile(path.join(__dirname + '/../views/login.html'));
   });
 
   app.post('/login', function(req, res){
@@ -150,7 +150,7 @@ module.exports = function(app){
   });
   /*******************************/
 
-  
+
 
   /*********** Chatbot ***********/
   app.get('/chatbot', function(req, res){
