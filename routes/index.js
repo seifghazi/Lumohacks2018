@@ -154,14 +154,14 @@ module.exports = function(app){
 
   /*********** Chatbot ***********/
   app.get('/chatbot', function(req, res){
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
+    // firebase.auth().onAuthStateChanged(function(user) {
+      // if (user) {
         // User is signed in.
         res.render("chatbot.ejs")
-      } else {
-        res.redirect('/login');
-      }
-    })
+    //   } else {
+    //     res.redirect('/login');
+    //   }
+    // })
   });
   /******************************/
 }
