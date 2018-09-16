@@ -1,0 +1,60 @@
+#signUp {
+	margin: 0;
+}
+
+.container {
+	margin-top: 60px;
+	background-color: #fecfd9;
+	width: 350px;
+	height: auto;
+	border-radius: 10px;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+input[type=text], input[type=password] {
+	padding: 5px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd
+	outline: none; 
+}
+
+input[type=button] {
+	background-color: #febfe8;
+	font-size: 16px;
+	border-radius: 20px;
+	padding: 5px;
+}
+
+.navbar {
+	color: white;
+	background-color: #fecfd9;
+	height: 80px;
+}
+
+#logo {
+	font-family: 'Segoe UI';
+	font-size: 24pt;
+	font-weight: bold;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+h1{
+	font-family: 'Segoe UI';
+	margin-top: 0px;
+	color: white;
+}
+
+label{
+	font-family: 'Segoe UI';
+	padding-right: 10px;
+	color: white;
+	font-size: 16px;
+}
