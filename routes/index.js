@@ -15,9 +15,7 @@ module.exports = function(app){
 
     /*********** Login Page *********/
     app.get('/login', function(req, res) {
-      // res.sendFile(path.join(__dirname + '/../views/login.html'));
-      res.sendFile(path.join(__dirname + '/../views/index.html'));
-
+      res.sendFile(path.join(__dirname + '/../views/login.html'));
     });
 
     app.post('/login', function(req, res){
@@ -64,14 +62,14 @@ module.exports = function(app){
 
     /*********** Chatbot ***********/
     app.get('/chatbot', function(req, res){
-      // firebase.auth().onAuthStateChanged(function(user) {
-      //   if (user) {
-      //     // User is signed in.
-          res.render("index.ejs")
-      //   } else {
-      //     res.redirect('/login')
-      //   }
-      // });
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          res.render("chatbot.ejs")
+        } else {
+          res.redirect('/login')
+        }
+      });
     });
     /*******************************/
 
